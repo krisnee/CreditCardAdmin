@@ -13,7 +13,7 @@ export class AddComponent {
 
   private subscription: Subscription | undefined;
 
-  constructor(private creditcardsService: CreditcardsService,
+  constructor(private creditCardsService: CreditcardsService,
     private router: Router) { 
   }
 
@@ -24,10 +24,8 @@ export class AddComponent {
       description: "",
       maxCredit: 5000,
       interestRate: 12,
-      introOffer: true,
       active: true,
       recommendedCreditScore: "100-500",
-      numberOfApplications: 1,
       annualFee: 12,
       termsAndConditions: "Terms and Conditions for the Credit Card",
       createdDate: Date(),
@@ -35,9 +33,9 @@ export class AddComponent {
     }
   
   saveCreditCard() {
-    this.subscription = this.creditcardsService.createCreditCard(this.newCreditCard).subscribe(data => {
+    this.subscription = this.creditCardsService.createCreditCard(this.newCreditCard).subscribe(data => {
       alert("Credit Card Added");
-      this.router.navigate(['/creditcards']);
+      this.router.navigate(['creditcards']);
     })
   }
   ngOnDestroy(){

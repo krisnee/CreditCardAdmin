@@ -5,18 +5,18 @@
     </mat-card>
 
     <mat-card class="mat-card count-card bg-warning">
-      <mat-card-title>Num of Cards</mat-card-title>
-      <mat-card-content>10</mat-card-content>
+      <mat-card-title>Num of Cards with Interest Rate over 7</mat-card-title>
+      <mat-card-content>{{creditCardMaximumInterest}}</mat-card-content>
     </mat-card>
 
     <mat-card class="mat-card count-card bg-info">
-      <mat-card-title>Num of Cards</mat-card-title>
-      <mat-card-content>10</mat-card-content>
+      <mat-card-title>Num of Cards with Active Status True</mat-card-title>
+      <mat-card-content>{{creditCardActive}}</mat-card-content>
     </mat-card>
     
     <mat-card class="mat-card count-card bg-primary">
-      <mat-card-title>Num of Cards</mat-card-title>
-      <mat-card-content>10</mat-card-content>
+      <mat-card-title>Num of Cards with Recommended Credit Score 500-700</mat-card-title>
+      <mat-card-content>{{creditCardRecommendedCreditScore}}</mat-card-content>
     </mat-card>
   </div>
 
@@ -103,6 +103,6 @@
       <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayColumns"></tr>
     </table>
-    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
   </mat-card-content>
 </mat-card>

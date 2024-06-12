@@ -5,10 +5,8 @@ export interface CreditCard {
     description: string;
     maxCredit: number;
     interestRate: number;
-    introOffer: boolean;
     active: boolean;
     recommendedCreditScore: string;
-    numberOfApplications: number;
     annualFee: number;
     termsAndConditions: string;
     createdDate: string;
