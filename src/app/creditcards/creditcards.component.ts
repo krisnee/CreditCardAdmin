@@ -28,7 +28,9 @@ export class CreditcardsComponent {
 
   dataSource = new MatTableDataSource(this.creditcards);
 
-  displayColumns = ["select", "id", "name", "bankName", "description", "maxCredit", "interestRate", "introOffer", "active", "recommendedCreditScore", "numberOfApplications", "annualFee", "termsAndConditions", "createdDate", "updatedDate"];
+  displayColumns = ["select", "id", "name", "bankName", "description", "maxCredit", "interestRate",  "active", "recommendedCreditScore", "createdDate", "updatedDate", "actions"];
+
+  //"introOffer", "numberOfApplications", "annualFee", "termsAndConditions",
 
   selection = new SelectionModel(true, []);
 
