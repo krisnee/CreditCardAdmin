@@ -1,5 +1,5 @@
 export interface CreditCard {
-    id: number;
+    id: number | undefined; 
     name: string;
     bankName: string;
     description: string;
