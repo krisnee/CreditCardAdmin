@@ -15,6 +15,11 @@ import { CreditcardsService } from '../services/creditcards.service';
 export class CreditcardsComponent {
   
   creditcards: CreditCard[] = [];
+
+  creditCardMaximumAmount: number = 0;
+  creditCardMaximumInterest: number = 0;
+  creditCardReccomendedCreditScore: number = 0;
+  creditCardActive: number = 0;
   
   constructor(private creditcardsService: CreditcardsService) {
     this.creditcardsService.getCreditCards().subscribe((data:CreditCard[]) => {
@@ -22,7 +27,9 @@ export class CreditcardsComponent {
 
       this.dataSource = new MatTableDataSource(this.creditcards);
       this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort; 
+      this.dataSource.sort = this.sort;
+
+      this.calculateMetrics();
     })
   }
 
@@ -40,4 +47,11 @@ export class CreditcardsComponent {
   selectHandler(row: CreditCard) {
     this.selection.toggle(row as never);
   }
-}
+  calculateMetrics() {
+    console.log(this.creditcards)
+    this.creditCardMaximumAmount = this.creditcards.filter(card => card.maxCredit > 3000).length;
+    this.creditCardMaximumInterest = this.creditcards.filter(card => card.interestRate < 11.5).length;
+    this.creditCardReccomendedCreditScore = this.creditcards.filter(card => card.recommendedCreditScore == "500-700").length;
+    this.creditCardActive = this.creditcards.filter(card => card.active == false).length;
+    }
+  }

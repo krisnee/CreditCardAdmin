@@ -15,20 +15,6 @@
       "updatedDate": "2023-31-08"
     },
     {
-      "id": "2",
-      "name": "Mastercard",
-      "description": "Mastercard offers customers with various options",
-      "bankName": "Mastercard",
-      "maxCredit": 3000,
-      "interestRate": 10,
-      "active": false,
-      "recommendedCreditScore": "700-900",
-      "annualFee": 4,
-      "termsAndConditions": "Following are the terms and conditions",
-      "createdDate": "2023-31-08",
-      "updatedDate": "2023-31-08"
-    },
-    {
       "id": "4",
       "name": "Bank of America",
       "description": "Bank of America offers customers with various options",
