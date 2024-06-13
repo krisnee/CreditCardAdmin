@@ -37,7 +37,7 @@ export class CreditcardsComponent {
 
   displayColumns = ["select", "id", "name", "bankName", "description", "maxCredit", "interestRate",  "active", "recommendedCreditScore", "createdDate", "updatedDate", "actions"];
 
-  //"introOffer", "numberOfApplications", "annualFee", "termsAndConditions",
+  //"introOffer", "numberOfApplications", "annualFee","termsAndConditions",
 
   selection = new SelectionModel(true, []);
 

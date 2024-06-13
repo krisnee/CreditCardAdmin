@@ -29,14 +29,12 @@ export class EditComponent {
       this.editCreditCardForm = this.formBuilder.group({
         id: [this.creditCardId],
         name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-        bankName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-        description: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-        maxCredit: ['',[Validators.required, Validators.min(1000), Validators.max(100)]],
-        interestRate: ['', [Validators.required, Validators.min(1), Validators.max(100)]],
-        introOffer: [''],
+        bankName: ['', [Validators.required]],
+        description: ['', [Validators.required]],
+        maxCredit: ['',[Validators.required]],
+        interestRate: ['', [Validators.required]],
         active: [false, [Validators.required]],
         recommendedCreditScore: [null, [Validators.required]],
-        numberOfApplications: [''],
         annualFee: ['',[Validators.required]],
         termsAndConditions: ['', [Validators.required]],
         createdDate: ['', [Validators.required]],
@@ -71,7 +69,7 @@ export class EditComponent {
   showSuccessMessage(message: string) {
     this.snackBar.open(message, 'Close', {
       duration: 3000
-    })
+    });
   }
   ngOnDestory(){
     this.destroy$.next();

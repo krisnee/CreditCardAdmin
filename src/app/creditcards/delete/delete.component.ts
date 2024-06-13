@@ -17,16 +17,15 @@ export class DeleteComponent {
 
   constructor(private router: ActivatedRoute,
     private route: Router,
-    private matSnackBar : MatSnackBar,
+    private matSnackBar: MatSnackBar,
     private creditcardsService: CreditcardsService) {
-    this.creditCardId = parseInt(this.router.snapshot.paramMap.get("id") || ''
-    );
+    this.creditCardId = parseInt(this.router.snapshot.paramMap.get("id") || '');
 
     this.creditcardsService.deleteCreditCard(this.creditCardId)
     .pipe(takeUntil(this.destory$))
     .subscribe(data => {
        this.showSuccessMessage("Credit Card Deleted Successfully"); 
-      this.route.navigate(['creditcards']);
+       this.route.navigate(['creditcards']);
     })
   }
 
